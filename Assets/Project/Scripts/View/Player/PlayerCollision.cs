@@ -16,4 +16,13 @@ public class PlayerCollision : MonoBehaviour
         }
 
     }
+    
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.transform.CompareTag("On"))
+        {
+            collision.transform.GetComponent<AnimationPresenter>().Play();
+        }
+
+    }
 }
