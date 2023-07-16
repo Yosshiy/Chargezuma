@@ -76,6 +76,10 @@ public class CharaMove : MonoBehaviour
         KahenSpeed += 5;
         a = DOTween.To(() => KahenSpeed, (x) => KahenSpeed = x, 0, 3)
                .SetEase(Ease.Linear);
+        DOTween.Sequence()
+               .Append(Camera.main.DOFieldOfView(70,1f))
+               .Append(Camera.main.DOFieldOfView(60, 3f));
+        
     }
     
     public void JumpA()
