@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// プレイヤーの基底クラス
+/// </summary>
 public abstract class PlayerCore : MonoBehaviour
 {
     IInputAdaptor Input = default;
@@ -15,8 +18,9 @@ public abstract class PlayerCore : MonoBehaviour
 
     private void Start()
     {
+        //インプット
         Input = new TestInputAdaptor();
-
+        //初期化
         OnInitialize();
     }
 

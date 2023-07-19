@@ -25,4 +25,9 @@ public class PlayerCollider : PlayerCore
         PlayerData.OnAccelerationSpeed += 0.5f;
         PlayerData.AccelerationChanged();
     }
+
+    public void OnDeath()
+    {
+
+    }
 }
