@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpeed : MonoBehaviour
+public class EnemySpeed : EnemyCore
 {
-    private void OnTriggerEnter(Collider collision)
+    protected override void OnTriggerEnter(Collider other)
     {
-        
-        collision.gameObject.GetComponent<PlayerCollider>().OnAcceleration();
+        other.gameObject.GetComponent<PlayerCollider>().OnAcceleration();
+    }
+
+    protected override void PlayAction()
+    {
     }
 
 }
