@@ -88,10 +88,10 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ClipTime: 0
+    - _ClipTime: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DelayTime: 1
+    - _DelayTime: 0.1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
