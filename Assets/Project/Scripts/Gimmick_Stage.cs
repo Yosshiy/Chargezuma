@@ -7,6 +7,8 @@ public class Gimmick_Stage : MonoBehaviour
 {
     [SerializeField] GameObject Poon;
     [SerializeField] ParticleSystem Particle;
+    [SerializeField] SceneSelect_UI UI;
+    [SerializeField] string scenename;
 
     private void Start()
     {
@@ -17,12 +19,14 @@ public class Gimmick_Stage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        UI.TextChange(scenename);
         Poon.GetComponent<Renderer>().material.DOFloat(0,"_ClipTime",2);
         Particle.Play();
     }
 
     private void OnTriggerExit(Collider other)
     {
+        UI.TextChange("");
         Poon.GetComponent<Renderer>().material.DOFloat(1, "_ClipTime", 2);
     }
 }

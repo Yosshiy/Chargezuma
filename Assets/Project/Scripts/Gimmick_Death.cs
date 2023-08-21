@@ -9,6 +9,8 @@ public class Gimmick_Death : MonoBehaviour
 {
     [SerializeField] Image Span;
     [SerializeField] TextMeshProUGUI Text;
+    [SerializeField] TextMeshProUGUI NextText;
+    [SerializeField] TextMeshProUGUI retrayText;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,11 +20,9 @@ public class Gimmick_Death : MonoBehaviour
         DOTween.Sequence()
                .Append(Span.DOFade(0.8f, 0.5f))
                .Append(Text.transform.DOScaleX(1, 0.3f))
-               .AppendCallback(() =>
-               {
-                   DOTween.To(() => Text.characterSpacing, (x) => Text.characterSpacing = x, 40, 2);
-                   
-               });
+               .Append(DOTween.To(() => Text.characterSpacing, (x) => Text.characterSpacing = x, 40, 2))
+               .Append(NextText.DOFade(1,0.5f))
+               .Append(retrayText.DOFade(1,0.5f));
 
     }
 }

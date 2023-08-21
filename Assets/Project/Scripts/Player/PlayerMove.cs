@@ -25,10 +25,12 @@ public class PlayerMove : PlayerCore
 
         PlayerInput.OnJump
                    .Where(x => x == true)
-                   .Subscribe(x => Jump(PlayerData.OnJumpPower));
+                   .Subscribe(x => Jump(PlayerData.OnJumpPower))
+                   .AddTo(this);
 
         PlayerInput.OnMoveDirection
-                   .Subscribe(x => OnMove(x));
+                   .Subscribe(x => OnMove(x))
+                   .AddTo(this);
     }
 
     /// <summary>

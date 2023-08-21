@@ -6528,7 +6528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 739024206}
-  Offset: {x: 0, y: 10, z: -7}
 --- !u!1 &348442204
 GameObject:
   m_ObjectHideFlags: 0
@@ -32017,6 +32016,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &739024209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739024206}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0adba9d26a9464eb1f28145871c447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &739024210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 62b5dd1cffd1125429ed708daaa6e8c6,

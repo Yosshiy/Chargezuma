@@ -13,14 +13,17 @@ public class PlayerAnimator : PlayerCore
 
         PlayerInput.OnMoveDirection
                    .Select(x => x != Vector3.zero)
-                   .Subscribe(x => Walk = x);
+                   .Subscribe(x => Walk = x)
+                   .AddTo(this);
 
         PlayerInput.OnJump
                    .DistinctUntilChanged()
-                   .Subscribe(x => Jump = x);
+                   .Subscribe(x => Jump = x)
+                   .AddTo(this);
 
         PlayerInput.OnMoveDirection
-                   .Subscribe(x => ChangeRotation(x));
+                   .Subscribe(x => ChangeRotation(x))
+                   .AddTo(this);
     }
 
     public bool Jump { set { PAnimator.SetBool("OnJump", value); } }
