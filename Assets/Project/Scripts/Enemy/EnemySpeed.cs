@@ -1,17 +1,40 @@
-using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class EnemySpeed : EnemyCore
-{
-    protected override void OnTriggerEnter(Collider other)
-    {
-        other.gameObject.GetComponent<PlayerCollider>().OnAcceleration();
-    }
+namespace Chargezuma.Enemy {
 
-    protected override void PlayAction()
+    /// <summary>
+    /// 触れると加速するエネミー
+    /// </summary>
+    public class EnemySpeed : EnemyCore
     {
-    }
+        PlayerCollider Collider;
 
+        protected override void OnTriggerEnter(Collider other)
+        {
+            try
+            {
+                if(Collider == null)
+                {
+                    Collider = other.GetComponent<PlayerCollider>();
+                }
+            }
+            catch (NullReferenceException e)
+            {
+                Debug.LogError(e);
+                Debug.Log("プレイヤーにPlayerColliderがアタッチされていません");
+            }
+
+            PlayAction();
+        }
+
+        /// <summary>
+        /// 加速メソッド
+        /// </summary>
+        protected override void PlayAction()
+        {
+            Collider.OnAcceleration();
+        }
+
+    }
 }

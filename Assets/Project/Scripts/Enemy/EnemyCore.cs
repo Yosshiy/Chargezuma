@@ -1,19 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class EnemyCore : MonoBehaviour
+namespace Chargezuma.Enemy
 {
-    protected virtual void OnTriggerEnter(Collider other)
+    /// <summary>
+    /// エネミーの基底クラス
+    /// </summary>
+    public abstract class EnemyCore : MonoBehaviour
     {
-        PlayAction();
-    }
+        /// <summary>
+        /// 当たった時の処理 : Trigger
+        /// </summary>
+        protected virtual void OnTriggerEnter(Collider other)
+        {
+            PlayAction();
+        }
 
-    protected virtual void OnCollisionEnter(Collision collision)
-    {
-        PlayAction();
-    }
+        /// <summary>
+        /// 当たった時の処理 : Collision
+        /// </summary>
+        protected virtual void OnCollisionEnter(Collision collision)
+        {
+            PlayAction();
+        }
 
-    protected abstract void PlayAction();
-    
+        /// <summary>
+        /// エネミーに当たった時の処理
+        /// </summary>
+        protected abstract void PlayAction();
+
+    }
 }

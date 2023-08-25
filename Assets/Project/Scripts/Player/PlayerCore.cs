@@ -16,9 +16,9 @@ public abstract class PlayerCore : MonoBehaviour
     protected IInputAdaptor PlayerInput { get {  return Input; } }
     protected PlayerData PlayerData { get {  return Data; } }
 
-    private void Start()
+    private void Awake()
     {
-        //インプット
+        //インプットの初期化
         Input = new TestInputAdaptor();
         //初期化
         OnInitialize();

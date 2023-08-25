@@ -249,10 +249,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 12611071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f6531c9b9600141bffd20d78b2fa1f, type: 3}
+  m_Script: {fileID: 11500000, guid: d5e5870611f5e594f9b84220545eb773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: Stage3
+  Type: 2
 --- !u!1 &19650127
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,10 +456,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 70359726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f6531c9b9600141bffd20d78b2fa1f, type: 3}
+  m_Script: {fileID: 11500000, guid: d5e5870611f5e594f9b84220545eb773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: Stage2
+  Type: 2
 --- !u!1 &100403446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,6 +5582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Span: {fileID: 0}
   Text: {fileID: 0}
+  NextText: {fileID: 0}
+  retrayText: {fileID: 0}
 --- !u!1 &234704621
 GameObject:
   m_ObjectHideFlags: 0
@@ -30369,10 +30373,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 847932092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6f6531c9b9600141bffd20d78b2fa1f, type: 3}
+  m_Script: {fileID: 11500000, guid: d5e5870611f5e594f9b84220545eb773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NextSceneName: Stage1
+  Type: 2
 --- !u!1 &933941147
 GameObject:
   m_ObjectHideFlags: 0
@@ -45836,7 +45841,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1963919021}
-  - component: {fileID: 1963919020}
   m_Layer: 0
   m_Name: SceneSelectComponent
   m_TagString: Untagged
@@ -45844,22 +45848,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1963919020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963919019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c6a66e34b59b7c418d7b1942d1d0d84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChildList:
-  - {fileID: 847932099}
-  - {fileID: 70359732}
-  - {fileID: 12611077}
 --- !u!4 &1963919021
 Transform:
   m_ObjectHideFlags: 0

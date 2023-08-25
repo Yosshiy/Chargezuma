@@ -1,11 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class EnemyJump : MonoBehaviour
+namespace Chargezuma.Enemy
 {
-    private void OnCollisionEnter(Collision collision)
+    /// <summary>
+    /// 触れるとジャンプするエネミー
+    /// </summary>
+    public class EnemyJump : EnemyCore
     {
-        collision.gameObject.GetComponent<PlayerCollider>().OnJump();
+        PlayerCollider Collider;
+
+        protected override void OnCollisionEnter(Collision collision)
+        {
+            try
+            {
+                if (Collider == null)
+                {
+                    Collider = collision.gameObject.GetComponent<PlayerCollider>();
+                }
+            }
+            catch (NullReferenceException e)
+            {
+                Debug.LogError(e);
+                Debug.Log("プレイヤーにPlayerColliderがアタッチされていません");
+            }
+        }
+
+        /// <summary>
+        /// ジャンプするメソッド
+        /// </summary>
+        protected override void PlayAction()
+        {
+            Collider.OnJump();
+        }
     }
 }
